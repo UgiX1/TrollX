@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -11,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-
 * {
 margin: 0;
 padding: 0;
@@ -19,15 +17,13 @@ box-sizing: border-box;
 }
 
 body {
-font-family: ‘Cairo’, ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 background: #000000;
 color: #ffffff;
 overflow-x: hidden;
 position: relative;
 min-height: 100vh;
-cursor: url(‘data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="rgba(138,43,226,0.5)" stroke="white" stroke-width="1"/></svg>’) 10 10, auto;
 }
-
 
 .cosmic-bg {
 position: fixed;
@@ -42,7 +38,6 @@ radial-gradient(ellipse at 90% 80%, rgba(218, 112, 214, 0.15) 0%, transparent 50
 radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
 }
 
-
 .nebula {
 position: fixed;
 width: 100%;
@@ -55,6 +50,7 @@ radial-gradient(ellipse at 70% 60%, rgba(218, 112, 214, 0.25) 0%, transparent 60
 animation: nebulaFlow 25s ease-in-out infinite;
 z-index: 0;
 filter: blur(60px);
+transform: translateZ(0);
 }
 
 @keyframes nebulaFlow {
@@ -72,7 +68,6 @@ opacity: 0.6;
 }
 }
 
-
 .stars {
 position: fixed;
 top: 0;
@@ -89,6 +84,7 @@ background: white;
 border-radius: 50%;
 animation: advancedTwinkle 4s ease-in-out infinite;
 filter: blur(0.5px);
+transform: translateZ(0);
 }
 
 @keyframes advancedTwinkle {
@@ -111,7 +107,6 @@ transform: scale(1.5) rotate(270deg);
 }
 }
 
-
 .shooting-star {
 position: fixed;
 width: 2px;
@@ -121,6 +116,7 @@ border-radius: 50%;
 box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
 animation: shootingStar 3s ease-out infinite;
 z-index: 1;
+transform: translateZ(0);
 }
 
 @keyframes shootingStar {
@@ -135,7 +131,7 @@ opacity: 0;
 }
 
 .shooting-star::after {
-content: ‘’;
+content: '';
 position: absolute;
 top: 0;
 left: 0;
@@ -144,7 +140,6 @@ height: 2px;
 background: linear-gradient(90deg, white, transparent);
 transform-origin: left;
 }
-
 
 .magic-particles {
 position: fixed;
@@ -161,6 +156,7 @@ position: absolute;
 border-radius: 50%;
 filter: blur(1px);
 animation: particleRise 15s ease-in-out infinite;
+transform: translateZ(0);
 }
 
 @keyframes particleRise {
@@ -183,7 +179,6 @@ transform: translateY(-20vh) translateX(100px) scale(0.5) rotate(360deg);
 opacity: 0;
 }
 }
-
 
 .lang-switch {
 position: fixed;
@@ -215,7 +210,7 @@ overflow: hidden;
 }
 
 .lang-btn::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 50%;
 left: 50%;
@@ -246,7 +241,6 @@ box-shadow: 0 0 30px rgba(138, 43, 226, 0.6),
 inset 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-
 .container {
 position: relative;
 z-index: 2;
@@ -257,7 +251,6 @@ align-items: center;
 justify-content: center;
 padding: 40px 20px 100px 20px;
 }
-
 
 .logo {
 font-size: 5em;
@@ -309,7 +302,6 @@ filter: blur(20px);
 opacity: 0.7;
 }
 
-
 .welcome-box {
 background: rgba(10, 0, 25, 0.85);
 border: 3px solid transparent;
@@ -328,7 +320,7 @@ overflow: hidden;
 }
 
 .welcome-box::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: -3px;
 left: -3px;
@@ -346,9 +338,8 @@ animation: borderGradient 4s ease infinite;
 50% { background-position: 100% 50%; }
 }
 
-
 .welcome-box::after {
-content: ‘’;
+content: '';
 position: absolute;
 top: -50%;
 left: -50%;
@@ -412,7 +403,6 @@ position: relative;
 z-index: 1;
 }
 
-
 .get-key-btn {
 padding: 22px 55px;
 font-size: 1.6em;
@@ -437,9 +427,8 @@ overflow: hidden;
 50% { background-position: 100% 50%; }
 }
 
-
 .get-key-btn::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 50%;
 left: 50%;
@@ -488,7 +477,7 @@ overflow: hidden;
 }
 
 .video-section::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: -3px;
 left: -3px;
@@ -538,7 +527,6 @@ text-shadow: 0 0 30px #ff1493, 0 0 60px #ff1493;
 }
 }
 
-
 .timer {
 font-size: 4em;
 font-weight: 900;
@@ -549,7 +537,7 @@ background-size: 200% 200%;
 -webkit-text-fill-color: transparent;
 animation: timerPulse 1.5s ease-in-out infinite, btnGradient 3s ease infinite;
 filter: drop-shadow(0 0 25px rgba(238, 130, 238, 0.8));
-font-family: ‘Courier New’, monospace;
+font-family: 'Courier New', monospace;
 letter-spacing: 5px;
 }
 
@@ -581,7 +569,7 @@ animation: btnGradient 3s ease infinite;
 }
 
 .youtube-btn::before {
-content: ‘▶’;
+content: '▶';
 margin-right: 10px;
 font-size: 1.2em;
 }
@@ -590,7 +578,6 @@ font-size: 1.2em;
 transform: translateY(-6px) scale(1.05);
 box-shadow: 0 20px 50px rgba(255, 0, 0, 0.7);
 }
-
 
 .verify-btn {
 padding: 18px 50px;
@@ -634,6 +621,7 @@ box-shadow: 0 20px 60px rgba(218, 112, 214, 0.9),
 0 0 80px rgba(218, 112, 214, 0.5);
 }
 }
+
 .key-reveal {
 display: none;
 background: rgba(10, 0, 25, 0.95);
@@ -652,7 +640,7 @@ overflow: hidden;
 }
 
 .key-reveal::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: -4px;
 left: -4px;
@@ -686,7 +674,6 @@ font-weight: 900;
 animation: rainbowText 3s ease infinite;
 }
 
-
 .key-display {
 font-size: 3.5em;
 font-weight: 900;
@@ -713,7 +700,6 @@ filter: drop-shadow(0 0 30px rgba(238, 130, 238, 0.8));
 0%, 100% { transform: translateY(0) scale(1); }
 50% { transform: translateY(-15px) scale(1.05); }
 }
-
 
 .copy-btn {
 padding: 18px 50px;
@@ -782,7 +768,7 @@ overflow: hidden;
 }
 
 .footer-btn::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 50%;
 left: 50%;
@@ -805,16 +791,16 @@ border-color: #da70d6;
 transform: translateY(-4px);
 box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5);
 }
+
 .explosion-particle {
 position: fixed;
-width
-
-: 10px;
+width: 10px;
 height: 10px;
 border-radius: 50%;
 pointer-events: none;
 z-index: 9999;
 box-shadow: 0 0 20px currentColor;
+transform: translateZ(0);
 }
 
 .spiral {
@@ -826,6 +812,7 @@ border-radius: 50%;
 animation: spiralAnim 10s linear infinite;
 pointer-events: none;
 z-index: 0;
+transform: translateZ(0);
 }
 
 @keyframes spiralAnim {
@@ -852,6 +839,7 @@ filter: blur(30px);
 animation: orbFloat 20s ease-in-out infinite;
 pointer-events: none;
 z-index: 0;
+transform: translateZ(0);
 }
 
 @keyframes orbFloat {
@@ -1117,238 +1105,300 @@ rightsLink: 'Our Rights ©'
 let currentLang = 'ar';
 let timerInterval;
 let timeLeft = 180;
+let activeParticles = new Set();
+let isLowPerformance = false;
+
+function detectPerformance() {
+    const startTime = performance.now();
+    for (let i = 0; i < 1000000; i++) {}
+    const endTime = performance.now();
+    isLowPerformance = (endTime - startTime) > 10;
+}
 
 function switchLang(lang) {
-currentLang = lang;
-document.documentElement.lang = lang;
-document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-document.getElementById('arBtn').classList.toggle('active', lang === 'ar');
-document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-updateTexts();
-createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 30);
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.getElementById('arBtn').classList.toggle('active', lang === 'ar');
+    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    updateTexts();
+    if (!isLowPerformance) {
+        createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 15);
+    }
 }
 
 function updateTexts() {
-const t = translations[currentLang];
-document.getElementById('welcomeText').textContent = t.welcomeText;
-document.getElementById('welcomeDesc').textContent = t.welcomeDesc;
-document.getElementById('startBtn').textContent = t.startBtn;
-document.getElementById('videoTitle').textContent = t.videoTitle;
-document.getElementById('videoDesc').textContent = t.videoDesc;
-document.getElementById('timerDesc').textContent = t.timerDesc;
-document.getElementById('youtubeBtn').textContent = t.youtubeBtn;
-document.getElementById('verifyBtn').textContent = t.verifyBtn;
-document.getElementById('keyTitle').textContent = t.keyTitle;
-document.getElementById('keyDesc').textContent = t.keyDesc;
-document.getElementById('copyBtn').textContent = t.copyBtn;
-document.getElementById('youtubeLink').textContent = t.youtubeLink;
-document.getElementById('telegramLink').textContent = t.telegramLink;
-document.getElementById('rightsLink').textContent = t.rightsLink;
+    const t = translations[currentLang];
+    document.getElementById('welcomeText').textContent = t.welcomeText;
+    document.getElementById('welcomeDesc').textContent = t.welcomeDesc;
+    document.getElementById('startBtn').textContent = t.startBtn;
+    document.getElementById('videoTitle').textContent = t.videoTitle;
+    document.getElementById('videoDesc').textContent = t.videoDesc;
+    document.getElementById('timerDesc').textContent = t.timerDesc;
+    document.getElementById('youtubeBtn').textContent = t.youtubeBtn;
+    document.getElementById('verifyBtn').textContent = t.verifyBtn;
+    document.getElementById('keyTitle').textContent = t.keyTitle;
+    document.getElementById('keyDesc').textContent = t.keyDesc;
+    document.getElementById('copyBtn').textContent = t.copyBtn;
+    document.getElementById('youtubeLink').textContent = t.youtubeLink;
+    document.getElementById('telegramLink').textContent = t.telegramLink;
+    document.getElementById('rightsLink').textContent = t.rightsLink;
 }
 
 function createStars() {
-const starsContainer = document.getElementById('stars');
-for(let i = 0; i < 300; i++) {
-const star = document.createElement('div');
-star.className = 'star';
-star.style.left = Math.random() * 100 + '%';
-star.style.top = Math.random() * 100 + '%';
-star.style.width = Math.random() * 3 + 1 + 'px';
-star.style.height = star.style.width;
-star.style.animationDelay = Math.random() * 4 + 's';
-star.style.animationDuration = (Math.random() * 3 + 3) + 's';
-starsContainer.appendChild(star);
-}
+    const starsContainer = document.getElementById('stars');
+    const count = isLowPerformance ? 80 : 150;
+    const fragment = document.createDocumentFragment();
+    
+    for(let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = Math.random() * 2 + 1 + 'px';
+        star.style.height = star.style.width;
+        star.style.animationDelay = Math.random() * 4 + 's';
+        star.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        fragment.appendChild(star);
+    }
+    starsContainer.appendChild(fragment);
 }
 
 function createShootingStars() {
-setInterval(() => {
-const shootingStar = document.createElement('div');
-shootingStar.className = 'shooting-star';
-shootingStar.style.left = Math.random() * 100 + '%';
-shootingStar.style.top = Math.random() * 50 + '%';
-shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
-document.body.appendChild(shootingStar);
-setTimeout(() => shootingStar.remove(), 3000);
-}, 3000);
+    if (isLowPerformance) return;
+    
+    setInterval(() => {
+        if (Math.random() > 0.7 || activeParticles.size > 50) return;
+        const shootingStar = document.createElement('div');
+        shootingStar.className = 'shooting-star';
+        shootingStar.style.left = Math.random() * 100 + '%';
+        shootingStar.style.top = Math.random() * 50 + '%';
+        shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        document.body.appendChild(shootingStar);
+        setTimeout(() => {
+            if (shootingStar.parentNode) {
+                shootingStar.remove();
+            }
+        }, 3000);
+    }, 5000);
 }
 
 function createParticles() {
-const particlesContainer = document.getElementById('particles');
-for(let i = 0; i < 40; i++) {
-const particle = document.createElement('div');
-particle.className = 'particle';
-particle.style.left = Math.random() * 100 + '%';
-const size = Math.random() * 120 + 60;
-particle.style.width = size + 'px';
-particle.style.height = size + 'px';
-const colors = ['rgba(138, 43, 226, 0.4)', 'rgba(218, 112, 214, 0.4)', 'rgba(238, 130, 238, 0.4)'];
-particle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
-particle.style.animationDelay = Math.random() * 15 + 's';
-particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-particlesContainer.appendChild(particle);
-}
+    const particlesContainer = document.getElementById('particles');
+    const count = isLowPerformance ? 10 : 20;
+    const fragment = document.createDocumentFragment();
+    
+    for(let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        const size = Math.random() * 60 + 30;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        const colors = ['rgba(138, 43, 226, 0.3)', 'rgba(218, 112, 214, 0.3)', 'rgba(238, 130, 238, 0.3)'];
+        particle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        fragment.appendChild(particle);
+    }
+    particlesContainer.appendChild(fragment);
 }
 
 function createSpirals() {
-for(let i = 0; i < 6; i++) {
-const spiral = document.createElement('div');
-spiral.className = 'spiral';
-spiral.style.left = Math.random() * 100 + '%';
-spiral.style.top = Math.random() * 100 + '%';
-spiral.style.animationDelay = Math.random() * 10 + 's';
-spiral.style.borderColor = `rgba(${138 + Math.random() * 100}, ${43 + Math.random() * 100}, ${226}, 0.3)`;
-document.body.appendChild(spiral);
-}
+    if (isLowPerformance) return;
+    
+    for(let i = 0; i < 2; i++) {
+        const spiral = document.createElement('div');
+        spiral.className = 'spiral';
+        spiral.style.left = Math.random() * 100 + '%';
+        spiral.style.top = Math.random() * 100 + '%';
+        spiral.style.animationDelay = Math.random() * 10 + 's';
+        spiral.style.borderColor = `rgba(${138 + Math.random() * 100}, ${43 + Math.random() * 100}, ${226}, 0.3)`;
+        document.body.appendChild(spiral);
+    }
 }
 
 function createOrbs() {
-for(let i = 0; i < 5; i++) {
-const orb = document.createElement('div');
-orb.className = 'orb';
-orb.style.left = Math.random() * 100 + '%';
-orb.style.top = Math.random() * 100 + '%';
-orb.style.animationDelay = Math.random() * 20 + 's';
-orb.style.animationDuration = (Math.random() * 15 + 15) + 's';
-document.body.appendChild(orb);
-}
+    if (isLowPerformance) return;
+    
+    for(let i = 0; i < 1; i++) {
+        const orb = document.createElement('div');
+        orb.className = 'orb';
+        orb.style.left = Math.random() * 100 + '%';
+        orb.style.top = Math.random() * 100 + '%';
+        orb.style.animationDelay = Math.random() * 20 + 's';
+        orb.style.animationDuration = (Math.random() * 15 + 15) + 's';
+        document.body.appendChild(orb);
+    }
 }
 
 function createMassiveExplosion(x, y, count) {
-for(let i = 0; i < count; i++) {
-const particle = document.createElement('div');
-particle.className = 'explosion-particle';
-particle.style.left = x + 'px';
-particle.style.top = y + 'px';
-const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ff1493', '#ba55d3', '#9370db'];
-const color = colors[Math.floor(Math.random() * colors.length)];
-particle.style.background = color;
-particle.style.color = color;
-document.body.appendChild(particle);
-const angle = (Math.PI * 2 * i) / count;
-const velocity = Math.random() * 8 + 6;
-const vx = Math.cos(angle) * velocity;
-const vy = Math.sin(angle) * velocity;
-let posX = x;
-let posY = y;
-let life = 100;
-const size = Math.random() * 8 + 6;
-particle.style.width = size + 'px';
-particle.style.height = size + 'px';
-const animation = setInterval(() => {
-posX += vx;
-posY += vy;
-life -= 1.5;
-particle.style.left = posX + 'px';
-particle.style.top = posY + 'px';
-particle.style.opacity = life / 100;
-particle.style.transform = `scale(${life / 100}) rotate(${(100 - life) * 10}deg)`;
-if(life <= 0) {
-clearInterval(animation);
-particle.remove();
-}
-}, 20);
-}
+    if (isLowPerformance) return;
+    
+    const actualCount = Math.min(count, 30 - activeParticles.size);
+    if (actualCount <= 0) return;
+    
+    for(let i = 0; i < actualCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'explosion-particle';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ff1493', '#ba55d3', '#9370db'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.background = color;
+        particle.style.color = color;
+        document.body.appendChild(particle);
+        activeParticles.add(particle);
+        
+        const angle = (Math.PI * 2 * i) / actualCount;
+        const velocity = Math.random() * 4 + 3;
+        const vx = Math.cos(angle) * velocity;
+        const vy = Math.sin(angle) * velocity;
+        let posX = x;
+        let posY = y;
+        let life = 100;
+        const size = Math.random() * 4 + 3;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        const animation = setInterval(() => {
+            posX += vx;
+            posY += vy;
+            life -= 3;
+            particle.style.left = posX + 'px';
+            particle.style.top = posY + 'px';
+            particle.style.opacity = life / 100;
+            particle.style.transform = `scale(${life / 100}) rotate(${(100 - life) * 10}deg)`;
+            
+            if(life <= 0) {
+                clearInterval(animation);
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+                activeParticles.delete(particle);
+            }
+        }, 40);
+    }
 }
 
 function createContinuousExplosions() {
-setInterval(() => {
-const x = Math.random() * window.innerWidth;
-const y = Math.random() * window.innerHeight;
-createMassiveExplosion(x, y, 8);
-}, 2000);
+    if (isLowPerformance) return;
+    
+    setInterval(() => {
+        if (activeParticles.size > 20) return;
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        createMassiveExplosion(x, y, 3);
+    }, 4000);
 }
 
 function startProcess() {
-createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 50);
-for(let i = 0; i < 5; i++) {
-setTimeout(() => {
-createMassiveExplosion(
-Math.random() * window.innerWidth,
-Math.random() * window.innerHeight,
-20
-);
-}, i * 100);
-}
-setTimeout(() => {
-document.getElementById('welcomeBox').classList.add('hidden');
-document.getElementById('videoSection').style.display = 'block';
-startTimer();
-}, 600);
+    if (!isLowPerformance) {
+        createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 20);
+        for(let i = 0; i < 2; i++) {
+            setTimeout(() => {
+                createMassiveExplosion(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight,
+                    8
+                );
+            }, i * 200);
+        }
+    }
+    
+    setTimeout(() => {
+        document.getElementById('welcomeBox').classList.add('hidden');
+        document.getElementById('videoSection').style.display = 'block';
+        startTimer();
+    }, 600);
 }
 
 function startTimer() {
-timeLeft = 180;
-updateTimerDisplay();
-timerInterval = setInterval(() => {
-timeLeft--;
-updateTimerDisplay();
-if(timeLeft <= 0) {
-clearInterval(timerInterval);
-const verifyBtn = document.getElementById('verifyBtn');
-verifyBtn.disabled = false;
-verifyBtn.classList.add('ready');
-createMassiveExplosion(window.innerWidth / 2, window.innerHeight * 0.7, 30);
-}
-}, 1000);
+    timeLeft = 180;
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if(timeLeft <= 0) {
+            clearInterval(timerInterval);
+            const verifyBtn = document.getElementById('verifyBtn');
+            verifyBtn.disabled = false;
+            verifyBtn.classList.add('ready');
+            if (!isLowPerformance) {
+                createMassiveExplosion(window.innerWidth / 2, window.innerHeight * 0.7, 15);
+            }
+        }
+    }, 1000);
 }
 
 function updateTimerDisplay() {
-const minutes = Math.floor(timeLeft / 60);
-const seconds = timeLeft % 60;
-document.getElementById('timer').textContent = 
-`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    document.getElementById('timer').textContent = 
+    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 function verifyWatch() {
-createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 70);
-for(let i = 0; i < 150; i++) {
-setTimeout(() => {
-createMassiveExplosion(
-Math.random() * window.innerWidth,
-Math.random() * window.innerHeight,
-8
-);
-}, i * 30);
-}
-setTimeout(() => {
-document.getElementById('videoSection').classList.add('hidden');
-document.getElementById('keyReveal').style.display = 'block';
-}, 700);
+    if (!isLowPerformance) {
+        createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 25);
+        for(let i = 0; i < 30; i++) {
+            setTimeout(() => {
+                createMassiveExplosion(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight,
+                    3
+                );
+            }, i * 80);
+        }
+    }
+    
+    setTimeout(() => {
+        document.getElementById('videoSection').classList.add('hidden');
+        document.getElementById('keyReveal').style.display = 'block';
+    }, 700);
 }
 
 function copyKey() {
-const key = 'TrollXkeyX';
-navigator.clipboard.writeText(key).then(() => {
-const status = document.getElementById('copyStatus');
-status.textContent = translations[currentLang].copiedMsg;
-status.style.color = '#4ade80';
-createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 50);
-for(let i = 0; i < 20; i++) {
-setTimeout(() => {
-createMassiveExplosion(
-Math.random() * window.innerWidth,
-Math.random() * window.innerHeight,
-10
-);
-}, i * 100);
-}
-setTimeout(() => {
-status.textContent = '';
-}, 3500);
-});
+    const key = 'TrollXkeyX';
+    navigator.clipboard.writeText(key).then(() => {
+        const status = document.getElementById('copyStatus');
+        status.textContent = translations[currentLang].copiedMsg;
+        status.style.color = '#4ade80';
+        
+        if (!isLowPerformance) {
+            createMassiveExplosion(window.innerWidth / 2, window.innerHeight / 2, 20);
+            for(let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    createMassiveExplosion(
+                        Math.random() * window.innerWidth,
+                        Math.random() * window.innerHeight,
+                        3
+                    );
+                }, i * 200);
+            }
+        }
+        
+        setTimeout(() => {
+            status.textContent = '';
+        }, 3500);
+    });
 }
 
-document.addEventListener('mousemove', (e) => {
-if(Math.random() > 0.92) {
-createMassiveExplosion(e.pageX, e.pageY, 5);
+if (!isLowPerformance) {
+    document.addEventListener('mousemove', (e) => {
+        if(Math.random() > 0.97 && activeParticles.size < 15) {
+            createMassiveExplosion(e.pageX, e.pageY, 2);
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (activeParticles.size < 25) {
+            createMassiveExplosion(e.pageX, e.pageY, 6);
+        }
+    });
 }
-});
 
-document.addEventListener('click', (e) => {
-createMassiveExplosion(e.pageX, e.pageY, 15);
-});
-
+detectPerformance();
 createStars();
 createShootingStars();
 createParticles();
@@ -1356,11 +1406,13 @@ createSpirals();
 createOrbs();
 createContinuousExplosions();
 
-setInterval(() => {
-const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ba55d3', '#ff1493'];
-const color = colors[Math.floor(Math.random() * colors.length)];
-document.body.style.boxShadow = `inset 0 0 120px ${color}40`;
-}, 3500);
+if (!isLowPerformance) {
+    setInterval(() => {
+        const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ba55d3', '#ff1493'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.boxShadow = `inset 0 0 120px ${color}40`;
+    }, 3500);
+}
 </script>
 
 </body>

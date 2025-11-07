@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrollX Key - The King</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+background: #0a0015;
+color: white;
+overflow-x: hidden;
+position: relative;
+}
+
+.stars {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+
+.star {
+position: absolute;
+background: white;
+border-radius: 50%;
+animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+0%, 100% { opacity: 0.3; transform: scale(1); }
+50% { opacity: 1; transform: scale(1.5); }
+}
+
+.nebula {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background: radial-gradient(ellipse at 20% 30%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+radial-gradient(ellipse at 80% 70%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+animation: nebulaMove 20s ease-in-out infinite;
+z-index: 0;
+}
+
+@keyframes nebulaMove {
+0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+}
+
+.lang-switch {
+position: fixed;
+top: 20px;
+left: 20px;
+z-index: 1000;
+display: flex;
+gap: 10px;
+}
+
+.lang-btn {
+padding: 10px 20px;
+background: rgba(138, 43, 226, 0.3);
+border: 2px solid #8a2be2;
+color: white;
+cursor: pointer;
+border-radius: 10px;
+font-weight: bold;
+transition: all 0.3s;
+backdrop-filter: blur(10px);
+}
+
+.lang-btn:hover {
+background: rgba(138, 43, 226, 0.6);
+transform: translateY(-3px);
+box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);
+}
+
+.lang-btn.active {
+background: #8a2be2;
+box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+}
+
+.container {
+position: relative;
+z-index: 2;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.logo {
+font-size: 4em;
+font-weight: bold;
+background: linear-gradient(45deg, #8a2be2, #da70d6, #ee82ee, #8a2be2);
+background-size: 300% 300%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: gradientMove 3s ease infinite, float 4s ease-in-out infinite;
+text-align: center;
+margin-bottom: 30px;
+text-shadow: 0 0 40px rgba(138, 43, 226, 0.8);
+filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6));
+}
+
+@keyframes gradientMove {
+0%, 100% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0) rotate(0deg); }
+50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.welcome-box {
+background: rgba(10, 0, 21, 0.8);
+border: 3px solid #8a2be2;
+border-radius: 30px;
+padding: 50px;
+max-width: 700px;
+text-align: center;
+box-shadow: 0 0 60px rgba(138, 43, 226, 0.6), inset 0 0 40px rgba(138, 43, 226, 0.1);
+animation: pulse 2s ease-in-out infinite;
+backdrop-filter: blur(20px);
+position: relative;
+overflow: hidden;
+}
+
+.welcome-box::before {
+content: ‘’;
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+animation: shine 3s infinite;
+}
+
+@keyframes shine {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); box-shadow: 0 0 60px rgba(138, 43, 226, 0.6); }
+50% { transform: scale(1.02); box-shadow: 0 0 80px rgba(138, 43, 226, 0.8); }
+}
+
+.welcome-text {
+font-size: 2em;
+margin-bottom: 30px;
+position: relative;
+z-index: 1;
+animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+0%, 100% { text-shadow: 0 0 10px rgba(138, 43, 226, 0.5); }
+50% { text-shadow: 0 0 20px rgba(138, 43, 226, 0.8), 0 0 30px rgba(138, 43, 226, 0.6); }
+}
+
+.get-key-btn {
+padding: 20px 50px;
+font-size: 1.5em;
+background: linear-gradient(45deg, #8a2be2, #da70d6);
+border: none;
+color: white;
+border-radius: 50px;
+cursor: pointer;
+font-weight: bold;
+transition: all 0.3s;
+box-shadow: 0 10px 40px rgba(138, 43, 226, 0.5);
+animation: btnFloat 3s ease-in-out infinite;
+position: relative;
+z-index: 1;
+overflow: hidden;
+}
+
+.get-key-btn::before {
+content: ‘’;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.3);
+transform: translate(-50%, -50%);
+transition: width 0.6s, height 0.6s;
+}
+
+.get-key-btn:hover::before {
+width: 400px;
+height: 400px;
+}
+
+.get-key-btn:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 50px rgba(138, 43, 226, 0.8);
+}
+
+@keyframes btnFloat {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+.video-section {
+display: none;
+background: rgba(10, 0, 21, 0.9);
+border: 3px solid #da70d6;
+border-radius: 30px;
+padding: 40px;
+max-width: 800px;
+text-align: center;
+box-shadow: 0 0 80px rgba(218, 112, 214, 0.7);
+animation: slideIn 0.8s ease-out;
+backdrop-filter: blur(20px);
+position: relative;
+}
+
+@keyframes slideIn {
+from { opacity: 0; transform: translateY(50px) scale(0.9); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.video-title {
+font-size: 2em;
+margin-bottom: 20px;
+animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+0%, 100% { color: #8a2be2; }
+25% { color: #da70d6; }
+50% { color: #ee82ee; }
+75% { color: #ba55d3; }
+}
+
+.timer {
+font-size: 3em;
+margin: 30px 0;
+color: #ee82ee;
+animation: timerPulse 1s infinite;
+text-shadow: 0 0 20px rgba(238, 130, 238, 0.8);
+}
+
+@keyframes timerPulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.1); }
+}
+
+.verify-btn {
+padding: 15px 40px;
+font-size: 1.3em;
+background: linear-gradient(45deg, #da70d6, #ee82ee);
+border: none;
+color: white;
+border-radius: 50px;
+cursor: pointer;
+font-weight: bold;
+margin-top: 20px;
+transition: all 0.3s;
+box-shadow: 0 10px 40px rgba(218, 112, 214, 0.5);
+}
+
+.verify-btn:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 50px rgba(218, 112, 214, 0.8);
+}
+
+.verify-btn:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.key-reveal {
+display: none;
+background: rgba(10, 0, 21, 0.95);
+border: 4px solid #ee82ee;
+border-radius: 30px;
+padding: 60px;
+max-width: 700px;
+text-align: center;
+box-shadow: 0 0 100px rgba(238, 130, 238, 0.9);
+animation: reveal 1s ease-out;
+backdrop-filter: blur(20px);
+}
+
+@keyframes reveal {
+0% { opacity: 0; transform: scale(0) rotate(180deg); }
+100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.key-title {
+font-size: 2.5em;
+margin-bottom: 30px;
+animation: rainbow 3s infinite;
+}
+
+@keyframes rainbow {
+0%, 100% { color: #8a2be2; text-shadow: 0 0 30px #8a2be2; }
+25% { color: #da70d6; text-shadow: 0 0 30px #da70d6; }
+50% { color: #ee82ee; text-shadow: 0 0 30px #ee82ee; }
+75% { color: #ba55d3; text-shadow: 0 0 30px #ba55d3; }
+}
+
+.key-display {
+font-size: 3em;
+font-weight: bold;
+background: linear-gradient(45deg, #8a2be2, #da70d6, #ee82ee, #ba55d3);
+background-size: 300% 300%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: gradientMove 3s ease infinite, keyBounce 1s ease-in-out infinite;
+padding: 30px;
+border: 3px dashed #ee82ee;
+border-radius: 20px;
+margin: 30px 0;
+position: relative;
+}
+
+@keyframes keyBounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+.copy-btn {
+padding: 15px 40px;
+font-size: 1.2em;
+background: linear-gradient(45deg, #ba55d3, #8a2be2);
+border: none;
+color: white;
+border-radius: 50px;
+cursor: pointer;
+font-weight: bold;
+transition: all 0.3s;
+box-shadow: 0 10px 40px rgba(138, 43, 226, 0.5);
+}
+
+.copy-btn:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 50px rgba(138, 43, 226, 0.8);
+}
+
+.footer {
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 1000;
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.footer-btn {
+padding: 12px 25px;
+background: rgba(138, 43, 226, 0.4);
+border: 2px solid #8a2be2;
+color: white;
+text-decoration: none;
+border-radius: 15px;
+font-weight: bold;
+transition: all 0.3s;
+backdrop-filter: blur(10px);
+display: inline-block;
+}
+
+.footer-btn:hover {
+background: rgba(138, 43, 226, 0.7);
+transform: translateY(-3px);
+box-shadow: 0 5px 20px rgba(138, 43, 226, 0.6);
+}
+
+.particles {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 0;
+}
+
+.particle {
+position: absolute;
+background: radial-gradient(circle, rgba(138, 43, 226, 0.8) 0%, transparent 70%);
+border-radius: 50%;
+animation: particleFloat 15s infinite;
+}
+
+@keyframes particleFloat {
+0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+10% { opacity: 1; }
+90% { opacity: 1; }
+100% { transform: translateY(-100vh) translateX(100px) scale(1); opacity: 0; }
+}
+
+.explosion {
+position: fixed;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+}
+
+.spiral {
+position: fixed;
+width: 200px;
+height: 200px;
+border: 3px solid rgba(138, 43, 226, 0.3);
+border-radius: 50%;
+animation: spiral 10s linear infinite;
+pointer-events: none;
+z-index: 0;
+}
+
+@keyframes spiral {
+0% { transform: rotate(0deg) scale(0.5); opacity: 0; }
+50% { opacity: 0.5; }
+100% { transform: rotate(360deg) scale(2); opacity: 0; }
+}
+
+.hidden {
+display: none !important;
+}
+
+@media (max-width: 768px) {
+.logo { font-size: 2.5em; }
+.welcome-text { font-size: 1.5em; }
+.get-key-btn { font-size: 1.2em; padding: 15px 35px; }
+.welcome-box { padding: 30px; }
+.key-display { font-size: 2em; }
+.footer { bottom: 10px; gap: 10px; }
+.footer-btn { padding: 10px 20px; font-size: 0.9em; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="nebula"></div>
+<div class="stars" id="stars"></div>
+<div class="particles" id="particles"></div>
+
+<div class="lang-switch">
+<button class="lang-btn active" onclick="switchLang('ar')" id="arBtn">عربي</button>
+<button class="lang-btn" onclick="switchLang('en')" id="enBtn">English</button>
+</div>
+
+<div class="container">
+<div class="logo" id="logo">TrollX Key</div>
+
+<div class="welcome-box" id="welcomeBox">
+<h1 class="welcome-text" id="welcomeText">مرحباً بيك يا حلو! 🚀</h1>
+<p id="welcomeDesc" style="font-size: 1.3em; margin-bottom: 30px; line-height: 1.6;">هاي هي بوابتك الأسطورية للحصول على المفتاح السحري! استعد لرحلة خيالية ما تنتهي!</p>
+<button class="get-key-btn" onclick="startProcess()" id="startBtn">اضغط هنا للحصول على المفتاح! ✨</button>
+</div>
+
+<div class="video-section" id="videoSection">
+<h2 class="video-title" id="videoTitle">شاهد هذا الفيديو المذهل! 🎬</h2>
+<p id="videoDesc" style="font-size: 1.2em; margin-bottom: 20px;">لازم تشاهد الفيديو كامل للحصول على المفتاح الثمين!</p>
+<div class="timer" id="timer">03:00</div>
+<p id="timerDesc" style="font-size: 1.1em; margin-bottom: 20px;">افتح الفيديو بتاب ثاني وشاهده للآخر!</p>
+<a href="https://www.youtube.com/watch?v=6FjIRKuWI8o" target="_blank" style="display: inline-block; padding: 15px 40px; background: linear-gradient(45deg, #ff0000, #ff4444); color: white; text-decoration: none; border-radius: 50px; font-size: 1.2em; font-weight: bold; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5); transition: all 0.3s;">شاهد الفيديو على يوتيوب 📺</a>
+<br>
+<button class="verify-btn" onclick="verifyWatch()" id="verifyBtn" disabled>تحقق من المشاهدة ✓</button>
+</div>
+
+<div class="key-reveal" id="keyReveal">
+<h2 class="key-title" id="keyTitle">تهانينا! 🎉 المفتاح ملكك الآن!</h2>
+<p id="keyDesc" style="font-size: 1.2em; margin-bottom: 20px;">ها هو المفتاح السحري اللي كنت تنتظره!</p>
+<div class="key-display" id="keyDisplay">TrollXkeyX</div>
+<button class="copy-btn" onclick="copyKey()" id="copyBtn">نسخ المفتاح 📋</button>
+<p id="copyStatus" style="margin-top: 20px; font-size: 1.1em;"></p>
+</div>
+</div>
+
+<div class="footer">
+<a href="https://www.youtube.com/@Troll.X40_40" target="_blank" class="footer-btn" id="youtubeLink">قناتنا على يوتيوب 🎥</a>
+<a href="https://t.me/Trollxhub1" target="_blank" class="footer-btn" id="telegramLink">قناتنا على تيليجرام 📱</a>
+<a href="#" class="footer-btn" id="rightsLink">حقوقنا ©</a>
+</div>
+
+<script>
+const translations = {
+ar: {
+logo: 'TrollX Key',
+welcomeText: 'مرحباً بيك يا حلو! 🚀',
+welcomeDesc: 'هاي هي بوابتك الأسطورية للحصول على المفتاح السحري! استعد لرحلة خيالية ما تنتهي!',
+startBtn: 'اضغط هنا للحصول على المفتاح! ✨',
+videoTitle: 'شاهد هذا الفيديو المذهل! 🎬',
+videoDesc: 'لازم تشاهد الفيديو كامل للحصول على المفتاح الثمين!',
+timerDesc: 'افتح الفيديو بتاب ثاني وشاهده للآخر!',
+verifyBtn: 'تحقق من المشاهدة ✓',
+keyTitle: 'تهانينا! 🎉 المفتاح ملكك الآن!',
+keyDesc: 'ها هو المفتاح السحري اللي كنت تنتظره!',
+copyBtn: 'نسخ المفتاح 📋',
+copiedMsg: 'تم النسخ! المفتاح الآن في الحافظة 🎊',
+youtubeLink: 'قناتنا على يوتيوب 🎥',
+telegramLink: 'قناتنا على تيليجرام 📱',
+rightsLink: 'حقوقنا ©'
+},
+en: {
+logo: 'TrollX Key',
+welcomeText: 'Welcome, Legend! 🚀',
+welcomeDesc: 'This is your epic gateway to get the magic key! Get ready for an incredible journey!',
+startBtn: 'Click Here to Get the Key! ✨',
+videoTitle: 'Watch This Amazing Video! 🎬',
+videoDesc: 'You must watch the full video to get the precious key!',
+timerDesc: 'Open the video in a new tab and watch it till the end!',
+verifyBtn: 'Verify Watching ✓',
+keyTitle: 'Congratulations! 🎉 The Key is Yours Now!',
+keyDesc: 'Here is the magic key you were waiting for!',
+copyBtn: 'Copy Key 📋',
+copiedMsg: 'Copied! The key is now in your clipboard 🎊',
+youtubeLink: 'Our YouTube Channel 🎥',
+telegramLink: 'Our Telegram Channel 📱',
+rightsLink: 'Our Rights ©'
+}
+};
+
+let currentLang = 'ar';
+let timerInterval;
+let timeLeft = 180;
+
+function switchLang(lang) {
+currentLang = lang;
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+document.getElementById('arBtn').classList.toggle('active', lang === 'ar');
+document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+updateTexts();
+createExplosion(window.innerWidth / 2, window.innerHeight / 2, 20);
+}
+
+function updateTexts() {
+const t = translations[currentLang];
+document.getElementById('welcomeText').textContent = t.welcomeText;
+document.getElementById('welcomeDesc').textContent = t.welcomeDesc;
+document.getElementById('startBtn').textContent = t.startBtn;
+document.getElementById('videoTitle').textContent = t.videoTitle;
+document.getElementById('videoDesc').textContent = t.videoDesc;
+document.getElementById('timerDesc').textContent = t.timerDesc;
+document.getElementById('verifyBtn').textContent = t.verifyBtn;
+document.getElementById('keyTitle').textContent = t.keyTitle;
+document.getElementById('keyDesc').textContent = t.keyDesc;
+document.getElementById('copyBtn').textContent = t.copyBtn;
+document.getElementById('youtubeLink').textContent = t.youtubeLink;
+document.getElementById('telegramLink').textContent = t.telegramLink;
+document.getElementById('rightsLink').textContent = t.rightsLink;
+}
+
+function createStars() {
+const starsContainer = document.getElementById('stars');
+for(let i = 0; i < 200; i++) {
+const star = document.createElement('div');
+star.className = 'star';
+star.style.left = Math.random() * 100 + '%';
+star.style.top = Math.random() * 100 + '%';
+star.style.width = Math.random() * 3 + 1 + 'px';
+star.style.height = star.style.width;
+star.style.animationDelay = Math.random() * 3 + 's';
+starsContainer.appendChild(star);
+}
+}
+
+function createParticles() {
+const particlesContainer = document.getElementById('particles');
+for(let i = 0; i < 30; i++) {
+const particle = document.createElement('div');
+particle.className = 'particle';
+particle.style.left = Math.random() * 100 + '%';
+particle.style.width = Math.random() * 100 + 50 + 'px';
+particle.style.height = particle.style.width;
+particle.style.animationDelay = Math.random() * 15 + 's';
+particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+particlesContainer.appendChild(particle);
+}
+}
+
+function createSpirals() {
+for(let i = 0; i < 5; i++) {
+const spiral = document.createElement('div');
+spiral.className = 'spiral';
+spiral.style.left = Math.random() * 100 + '%';
+spiral.style.top = Math.random() * 100 + '%';
+spiral.style.animationDelay = Math.random() * 10 + 's';
+document.body.appendChild(spiral);
+}
+}
+
+function createExplosion(x, y, count) {
+for(let i = 0; i < count; i++) {
+const particle = document.createElement('div');
+particle.className = 'explosion';
+particle.style.left = x + 'px';
+particle.style.top = y + 'px';
+const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ba55d3'];
+particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+document.body.appendChild(particle);
+const angle = (Math.PI * 2 * i) / count;
+const velocity = Math.random() * 5 + 5;
+const vx = Math.cos(angle) * velocity;
+const vy = Math.sin(angle) * velocity;
+let posX = x;
+let posY = y;
+let life = 100;
+const animation = setInterval(() => {
+posX += vx;
+posY += vy;
+life -= 2;
+particle.style.left = posX + 'px';
+particle.style.top = posY + 'px';
+particle.style.opacity = life / 100;
+particle.style.transform = `scale(${life / 100})`;
+if(life <= 0) {
+clearInterval(animation);
+particle.remove();
+}
+}, 20);
+}
+}
+
+function startProcess() {
+createExplosion(window.innerWidth / 2, window.innerHeight / 2, 30);
+setTimeout(() => {
+document.getElementById('welcomeBox').classList.add('hidden');
+document.getElementById('videoSection').style.display = 'block';
+startTimer();
+}, 500);
+}
+
+function startTimer() {
+timeLeft = 180;
+updateTimerDisplay();
+timerInterval = setInterval(() => {
+timeLeft--;
+updateTimerDisplay();
+if(timeLeft <= 0) {
+clearInterval(timerInterval);
+document.getElementById('verifyBtn').disabled = false;
+document.getElementById('verifyBtn').style.animation = 'btnFloat 1s ease-in-out infinite';
+}
+}, 1000);
+}
+
+function updateTimerDisplay() {
+const minutes = Math.floor(timeLeft / 60);
+const seconds = timeLeft % 60;
+document.getElementById('timer').textContent = 
+`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function verifyWatch() {
+createExplosion(window.innerWidth / 2, window.innerHeight / 2, 50);
+setTimeout(() => {
+document.getElementById('videoSection').classList.add('hidden');
+document.getElementById('keyReveal').style.display = 'block';
+for(let i = 0; i < 100; i++) {
+setTimeout(() => {
+createExplosion(
+Math.random() * window.innerWidth,
+Math.random() * window.innerHeight,
+5
+);
+}, i * 50);
+}
+}, 500);
+}
+
+function copyKey() {
+const key = 'TrollXkeyX';
+navigator.clipboard.writeText(key).then(() => {
+const status = document.getElementById('copyStatus');
+status.textContent = translations[currentLang].copiedMsg;
+status.style.color = '#4ade80';
+createExplosion(window.innerWidth / 2, window.innerHeight / 2, 30);
+setTimeout(() => {
+status.textContent = '';
+}, 3000);
+});
+}
+
+document.addEventListener('mousemove', (e) => {
+if(Math.random() > 0.95) {
+createExplosion(e.pageX, e.pageY, 3);
+}
+});
+
+createStars();
+createParticles();
+createSpirals();
+
+setInterval(() => {
+const colors = ['#8a2be2', '#da70d6', '#ee82ee', '#ba55d3'];
+document.body.style.boxShadow = `inset 0 0 100px ${colors[Math.floor(Math.random() * colors.length)]}`;
+}, 3000);
+</script>
+
+</body>
+</html>
